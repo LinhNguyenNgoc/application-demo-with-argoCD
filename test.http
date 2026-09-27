@@ -1,0 +1,93 @@
+Truy cập H2 Console qua trình duyệt: http://localhost:8080/h2-console
+
+JDBC URL: jdbc:h2:mem:productdb
+
+User Name: sa
+
+Password: (để trống)
+
+### 1. Lấy danh sách toàn bộ sản phẩm (Ban đầu sẽ trống)
+GET http://localhost:8080/api/products
+
+### ==========================================
+### THÊM 5 SẢN PHẨM MỚI (POST)
+### ==========================================
+
+### Thêm sản phẩm 1
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "MacBook Pro M3",
+  "price": 1999.99,
+  "stock": 15
+}
+
+### Thêm sản phẩm 2
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "iPhone 15 Pro",
+  "price": 999.00,
+  "stock": 30
+}
+
+### Thêm sản phẩm 3
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "Sony WH-1000XM5",
+  "price": 349.50,
+  "stock": 50
+}
+
+### Thêm sản phẩm 4
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "Keychron K2 Mechanical Keyboard",
+  "price": 89.99,
+  "stock": 100
+}
+
+### Thêm sản phẩm 5
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "Dell UltraSharp 27 Monitor",
+  "price": 550.00,
+  "stock": 20
+}
+
+### ==========================================
+### KIỂM TRA CÁC CHỨC NĂNG CRUD
+### ==========================================
+
+### 2. Xem lại toàn bộ danh sách (Sau khi đã thêm 5 sản phẩm)
+GET http://localhost:8080/api/products
+
+### 3. Lấy thông tin chi tiết một sản phẩm theo ID (Ví dụ: ID = 1)
+GET http://localhost:8080/api/products/1
+
+### 4. Cập nhật thông tin sản phẩm (Ví dụ: Cập nhật ID = 1)
+PUT http://localhost:8080/api/products/1
+Content-Type: application/json
+
+{
+  "name": "MacBook Pro M3 Max (Updated)",
+  "price": 2499.99,
+  "stock": 8
+}
+
+### 5. Xem lại sản phẩm ID = 1 sau khi cập nhật
+GET http://localhost:8080/api/products/1
+
+### 6. Xóa một sản phẩm theo ID (Ví dụ: Xóa sản phẩm có ID = 5)
+DELETE http://localhost:8080/api/products/5
+
+### 7. Lấy lại toàn bộ danh sách để xác nhận sản phẩm ID = 5 đã bị xóa
+GET http://localhost:8080/api/products

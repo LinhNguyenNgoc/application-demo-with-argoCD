@@ -28,7 +28,7 @@ jobs:
     - name: Repository Dispatch
       uses: peter-evans/repository-dispatch@v1
       with:
-        token: ${{ secrets.PAT }}
+        token: ${{ secrets.STUDY }}
         repository: ${{ github.actor }}/application-k8s-demo-with-argoCD
         event-type: new-image
         client-payload: '{"image": "${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}"}'

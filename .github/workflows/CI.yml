@@ -3,7 +3,7 @@ name: CI
 on:
   workflow_dispatch:
 env:
-  IMAGE_NAME: examplespringboot-dev
+  IMAGE_NAME: springboot-app-dev
   
 jobs:
   build:

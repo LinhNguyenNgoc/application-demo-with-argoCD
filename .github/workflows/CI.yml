@@ -2,6 +2,7 @@ name: CI
 
 on:
   workflow_dispatch:
+
 env:
   IMAGE_NAME: springboot-app-dev
   
@@ -31,4 +32,5 @@ jobs:
         token: ${{ secrets.STUDY }}
         repository: ${{ github.actor }}/application-k8s-demo-with-argoCD
         event-type: new-image
-        client-payload: '{"image": "lnnguyen2795/${{ env.IMAGE_NAME }}:${{ github.run_number }}"}'
+        # Truyền riêng số version (github.run_number) sang repo config để tránh lỗi cắt chuỗi yq
+        client-payload: '{"image": "${{ github.run_number }}"}'

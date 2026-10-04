@@ -1,0 +1,11 @@
+replicaCount: 2
+
+image:
+  repository: lnnguyen2795/springboot-app-dev
+  tag: "8"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
